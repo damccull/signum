@@ -1,0 +1,11 @@
+version: '3'
+services:
+  node1:
+    build:
+      context: .
+      args:
+        - database=h2
+        - network=internal_test
+    stop_grace_period: 5m
+    environment:
+      - SIGNUM__NODE_NETWORK = signum.net.TestnetNetwork 
